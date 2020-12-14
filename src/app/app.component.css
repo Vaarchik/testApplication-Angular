@@ -1,0 +1,15 @@
+.content-wrapper {
+    display: flex;
+}
+
+.gameScreen-wrapper {
+    display: flex;
+    width: 70%;
+    height: 100%;
+}
+
+.gameScore-wrapper {
+    display: flex;
+    width: 30%;
+    height: 100%;
+}

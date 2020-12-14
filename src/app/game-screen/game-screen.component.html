@@ -1,0 +1,46 @@
+<div class="app-wrapper">
+
+	<div class="game-field" *ngIf="gameService.isStarted">
+		<div *ngFor="let row of gameService.gameMap; let x = index" class="game-field_row">
+			<div *ngFor="let cell of row; let y = index"
+					 (click)="gameService.handlePlayerAction(x, y, CELL_STATUS.USER)"
+					class="game-field_cell"
+					[style.width.px]="cellWidth"
+					[style.height.px]="cellWidth"
+					[class.game-field_cell-red]="cell === CELL_STATUS.PC"
+					[class.game-field_cell-green]="cell === CELL_STATUS.USER"
+					[class.game-field_cell-yellow]="gameService.drawingCell && gameService.drawingCell.x === x && gameService.drawingCell.y === y"></div>
+		</div>
+	</div>
+
+	<div class="new-game" *ngIf="!gameService.isStarted">
+
+		<label for="new-game_rows">Enter number of rows</label>
+		<input type="number"
+					class="new-game_input new-game_rows"
+					[(ngModel)]="roundRows">
+
+		<label for="new-game_cells">Enter number of cells</label>
+		<input type="number"
+					class="new-game_input new-game_cells"
+					[(ngModel)]="roundCells">
+
+		<label for="new-game_interval">Enter interval round time</label>
+		<input type="number"
+					class="new-game_input new-game_interval"
+					[(ngModel)]="roundIntervalInput"
+					placeholder="round time">
+
+		<button mat-raised-button
+					color="warn"
+					class="new-game_btn-start"
+					[disabled]="!roundIntervalInput || !roundRows || !roundCells"
+					(click)="startNewGame()">START</button>
+	</div>
+
+
+	<app-score></app-score>
+
+</div>
+
+<app-popup-game-result *ngIf="isShowPopup" (close)="closePopup()"></app-popup-game-result>

@@ -1,0 +1,56 @@
+.app-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.game-field {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 800px;
+    height: 800px;
+}
+
+.game-field_row {
+	display: flex;
+	justify-content: center;
+}
+
+.game-field_cell {
+	margin: 5px;
+	border-radius: 5%;
+	background-color: blue;
+}
+
+.game-field_cell-yellow {
+	background-color: yellow;
+}
+
+.game-field_cell-red {
+	background-color: darkred;
+}
+
+.game-field_cell-green {
+	background-color: chartreuse;
+}
+
+.new-game {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 20px;
+	width: 400px;
+}
+
+.new-game_input {
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+.new-game_btn-start {
+	width: 208px;
+}

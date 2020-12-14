@@ -1,0 +1,12 @@
+<div class="landing">
+	<div class="game-result">
+		<p class="game-result_winner">GAME FINISHED, WINNER: {{gameService.gameScore.winner === CELL_STATUS.USER ? 'USER' : 'PC'}}</p>
+
+
+		<app-score></app-score>
+
+		<button mat-raised-button
+						(click)="close.emit()">Close</button>
+
+	</div>
+</div>
